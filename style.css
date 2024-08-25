@@ -4,17 +4,11 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 .container {
     text-align: center;
-    max-width: 1000px;
-    margin: auto;
-    margin-top: 50px; /* Add top margin to the container */
+    padding: 20px;
 }
 
 h1 {
@@ -29,10 +23,9 @@ h2 {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns by default */
     gap: 15px;
     margin-bottom: 20px;
-    justify-content: center;
 }
 
 .card {
@@ -41,6 +34,8 @@ h2 {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: 14px;
 }
 
 .card p:first-child {
@@ -62,3 +57,28 @@ h2 {
     background-color: #555;
 }
 
+/* Responsive design */
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on smaller screens */
+        justify-content: center; /* Center the grid */
+    }
+
+    .card {
+        padding: 15px; /* Adjust padding to ensure dimensions fit on smaller screens */
+        font-size: 12px; /* Smaller font size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr); /* Still 3 columns on very small screens */
+        justify-content: center; /* Center the grid */
+        gap: 10px; /* Reduce gap between cards */
+    }
+
+    .card {
+        padding: 10px; /* Further reduce padding for very small screens */
+        font-size: 10px; /* Adjust font size accordingly */
+    }
+}
